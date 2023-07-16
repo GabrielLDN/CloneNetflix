@@ -1,0 +1,327 @@
+:root{
+    --primary: #E50914;;
+    --grey: #141414;
+    --white: #ffffff;
+    --border: #4C4849;
+    --focus: #000000 ;
+}
+
+html, body{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    text-decoration:none;
+    color:var(--white);
+}
+
+body{
+   
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--grey);
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.main-header{
+    top: 0;
+    position: fixed ;
+    height: 70px;
+    width: 100%;
+    z-index: 100;
+    background: linear-gradient(180deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.00) 100%);
+    /* overflow: hidden; */
+   /*  */
+}
+
+.main-header .container{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    height: inherit; /* usa a mesmo padrão do elemento pai*/
+    justify-content: flex-start;
+
+}
+
+.main-header img{
+    width: auto;
+    height: 100px;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navbar ul{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.navbar ul li a{
+    color:var(--white);
+    font-size: 16px;
+    transition: 0.3s ease;
+
+}
+
+.navbar ul li a:hover{
+    opacity: 0.8;    
+}
+
+.navbar .actions{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.navbar .actions i{
+    color:var(--white);
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.actions .search-field{
+    display: flex;
+    align-items: center;
+    position: relative;
+    
+}
+
+.actions .search-field i{
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    padding: 2px;
+}
+
+.actions .search-field input{
+    height: 34px;
+    padding-left: 34px;
+    color:var(--white);
+    background: none;
+    border: solid transparent 1px;
+    outline: none;
+    width: 0px;
+    transition: 0.3s ease;
+}
+
+.actions .search-field input:focus{
+    width: 215px;
+    background: var(--focus);
+    border: solid var(--white) 1px;
+}
+
+.account{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    position: relative;
+}
+
+.account img{
+    width: 100%;
+    height: 32px;
+    border-radius: 2px;  
+}
+
+.navbar .actions .account i{
+    font-size: 12px;
+    margin-left: 6px;  
+}
+
+.navbar .actions .account i .bxs-down-arrow{
+    font-size: 12px;
+}
+
+.navbar .actions .account .account-modal{
+    position: absolute;
+    width: 220px;
+    top: 50px;
+    right: 0;
+    background-color: rgba(2, 2, 2, 0.79);
+    opacity: 0;
+    visibility: hidden;   
+    transition: 0.5s;
+}
+
+.actions .account .account-modal ul{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.actions .account .account-modal ul li{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    width: 100%;
+    color: var(--white);
+    padding: 12px;
+    box-sizing: border-box;
+    transition: 0.3s ease;
+}
+.actions .account .account-modal ul li:hover{
+    background-color: #100F0F;
+}
+
+.actions .account .account-modal ul li:last-child{
+    border-top: solid var(--border) 2px;
+
+}
+.actions .account .account-modal ul li:last-child span{
+   text-align: center;
+   width: 100%;
+   padding: 14px ;
+    
+}
+
+.actions .account .account-modal ul li img{
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+}
+
+.actions .account .account-modal ul li i{
+    font-size: 24px;
+    color: #B3B3B3;
+}
+
+.actions .account .account-modal .bxs-up-arrow{
+    top: -9px;
+    right: 30px;
+    position: absolute;
+    opacity: 0.6;
+
+}
+.navbar .actions .account .bxs-down-arrow{
+    transition: 0.3s ease;
+}
+
+.navbar .actions .account:hover .bxs-down-arrow{
+    transform: rotate(180deg);
+
+}
+
+.navbar .actions .account:hover .account-modal{
+    visibility: visible;
+    opacity: 1;
+    transition: 1s;
+}
+
+/*overflow mantem a proporção da imagem pro usuário ver, não deixando 
+a imagem ser cortada, onde ela não ultrapassa o tamanho que indiquei
+No caso coloquei um height de 700px e overflow:hidden para obedecer a proporção*/
+/*Com o overflow eu posso forçar criar uma barra de scroll*/
+
+.intro{
+    height: calc(100vh - 100px);
+    position: relative;
+    overflow: hidden;
+
+}
+.intro .bg-intro{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* object-position: top; */
+}
+.intro .leading-container{
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: inherit;
+    display: flex;
+   
+}
+
+.intro .leading-container .leading img{
+    height: 70px;
+}
+
+.intro .leading-container .leading h1{
+    font-size: 48px;
+    text-transform: uppercase;
+    color: var(--white);
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+    max-width: 500px;
+}
+.intro .leading-container .leading p{
+    max-width: 600px;
+    margin: 30px 0;
+    text-shadow: 0 2 12px rgb(0, 0, 0);
+    color: var(--white);
+    
+}
+.intro .leading-container .container{
+    width: 100%;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+}
+.intro .leading-container .leading-actions{
+    display: flex;
+    gap: 12px;
+
+}
+
+.btn{
+    background-color: var(--white);
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    padding: 0 20px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    color: var(--focus);
+    font-weight: 600;
+    gap: 8px;
+}
+.btn.secondary{
+    background-color: rgba(128, 128, 128, 0.437);
+    color: var(--white);
+}
+.btn:hover{
+    opacity: 0.8;
+}
+.btn i{
+    font-size: 30px;
+}
+
+.bg-gradient{
+    position: absolute;
+    width: 100%;
+    background: linear-gradient(360deg, #141414 0%, rgba(0,0,0, 0.00) 100%);;
+    height: 330px;
+    bottom: 0;
+}
+
+ 
+/* @media(min-height: 700px){
+    .intro{
+        height: 100%;
+    }
+} */
